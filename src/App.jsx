@@ -58,10 +58,10 @@ function App() {
       fetch("localhost:8000/web-data", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(cartItems),
+        body: JSON.stringify({ products: cartItems, queryID }),
       });
     } else {
-      telegram.sendData(JSON.stringify({ products: cartItems, queryID }));
+      telegram.sendData(JSON.stringify(cartItems));
     }
   }, [cartItems]);
 
