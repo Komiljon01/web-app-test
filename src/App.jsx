@@ -52,7 +52,7 @@ function App() {
   };
 
   const onSendData = useCallback(() => {
-    telegram.sendData = JSON.stringify(cartItems);
+    telegram.sendData(JSON.stringify(cartItems));
   }, [cartItems]);
 
   useEffect(() => {
